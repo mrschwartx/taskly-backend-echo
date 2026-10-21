@@ -1,0 +1,36 @@
+Role: You are senior software developer.
+
+Goal: Make SnippetBox application.
+SnippetBox: Share short text and code snippets. Modern web application.
+
+Tech Stack:
+- Golang
+- PostgreSQL
+- React
+- Tailwind/css
+
+Todo:
+1. Write code snippetbox-backend (:8080)
+    - use golang, echo v5,
+    - use postgres
+    - use sqldb
+    - use validation
+    - use better logging
+    - use env
+    - use security jwt 
+    - use testing unit integration e2e (TDD/BDD)
+    - create code implement modular monolith based domain architecture, clean code, domain driven design.
+2. Write code snippetbox-frontend   (:3000)
+    - use typescript
+    - use reactjs
+    - use Tailwind/css
+    - use testing unit integration e2e (TDD/BDD)
+    - create code implement feature based architecture
+3. Write code without any comments
+4. Use English as convention code.
+5. Fix snippetbox-docker.
+6. Fix CI in .github
+7. Fix README.md
+
+Output:
+- Send me snippetbox-fullstack.zip
