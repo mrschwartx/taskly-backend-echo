@@ -9,16 +9,7 @@
     "scope-enum": [
       2,
       "always",
-      [
-        "snippetbox",
-        "snippetbox-backend",
-        "snippetbox-frontend",
-        "snippet",
-        "user",
-        "docker",
-        "ci",
-        "deps"
-      ]
+      ["taskly", "docker", "ci", "deps"]
     ],
     "scope-case": [2, "always", "lower-case"],
     "subject-case": [0],
