@@ -36,7 +36,7 @@ func TestMain(m *testing.M) {
 	apiBinary = filepath.Join(dir, "api")
 	seedBinary = filepath.Join(dir, "seed")
 
-	for target, output := range map[string]string{"./cmd/api": apiBinary, "./cmd/seed": seedBinary} {
+	for target, output := range map[string]string{"./cmd/backend": apiBinary, "./cmd/seed": seedBinary} {
 		build := exec.Command("go", "build", "-o", output, target)
 		build.Dir = support.ProjectRoot()
 		if out, err := build.CombinedOutput(); err != nil {
