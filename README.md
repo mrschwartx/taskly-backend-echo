@@ -95,7 +95,7 @@ The frontend must set `VITE_API_BASE_URL=http://localhost:8080/api/v1` and `VITE
 ```
 taskly-backend/
   cmd/
-    api/         HTTP server entrypoint
+    backend/     HTTP server entrypoint
     migrate/     applies pending migrations
     seed/        demo data
   internal/
