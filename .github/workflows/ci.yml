@@ -38,17 +38,16 @@ jobs:
         working-directory: taskly-backend
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-go@v5
         with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: taskly-backend/package-lock.json
-      - name: Install
-        run: npm ci
-      - name: Lint
-        run: npm run lint
+          go-version-file: taskly-backend/go.mod
+          cache-dependency-path: taskly-backend/go.sum
       - name: Format check
-        run: npm run format:check
+        run: make fmt-check
+      - name: Vet
+        run: make vet
+      - name: Module check
+        run: make tidy-check
 
   taskly-test:
     name: Taskly code tests
@@ -76,19 +75,16 @@ jobs:
       TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-go@v5
         with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: taskly-backend/package-lock.json
-      - name: Install
-        run: npm ci
+          go-version-file: taskly-backend/go.mod
+          cache-dependency-path: taskly-backend/go.sum
       - name: Unit tests
-        run: npm run test:unit
+        run: make test/unit
       - name: Integration tests
-        run: npm run test:integration
+        run: make test/integration
       - name: End-to-end tests
-        run: npm run test:e2e
+        run: make test/e2e
 
   taskly-docker:
     name: Taskly docker container
